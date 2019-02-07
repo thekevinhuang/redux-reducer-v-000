@@ -7,7 +7,9 @@ export function manageFriends(state, action){
     case "ADD_FRIEND" :
       return {friends: [...state.friends, action.friend]}
     case "REMOVE_FRIEND" :
-      return {friends: state.friends.findIndex()}
+      return {friends: state.friends.filter(value, index, arr){
+        return value.id != action.friend.id
+      }}
     default:
       return state
   }
